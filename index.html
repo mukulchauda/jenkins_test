@@ -33,3 +33,167 @@
         }
 
         nav ul {
+            padding: 0;
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #4CAF50;
+        }
+
+        /* SECTIONS */
+        section {
+            margin: 40px auto;
+            width: 85%;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h2 {
+            color: #4CAF50;
+        }
+
+        /* IMAGE STYLING */
+        .section-img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+            margin-top: 20px;
+            transition: 0.4s;
+        }
+
+        .section-img:hover {
+            transform: scale(1.05);
+        }
+
+        /* CARDS */
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            width: 250px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        /* BUTTON */
+        .btn {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #2e7d32;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🚀 Welcome to Jenkins CI/CD</h1>
+    <p>Automation • Integration • Deployment</p>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="home">
+    <h2>Home</h2>
+    <p>Automate your development workflow with Jenkins.</p>
+
+    <img class="section-img"
+        src="https://images.unsplash.com/photo-1605379399642-870262d3d051">
+
+    <br>
+    <a class="btn" href="#features">Explore Features</a>
+</section>
+
+<section id="about">
+    <h2>About Jenkins</h2>
+    <p>Jenkins is an open-source automation server that helps developers build, test, and deploy their software reliably.</p>
+
+    <img class="section-img"
+        src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
+</section>
+
+<section id="features">
+    <h2>Powerful Features</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>⚡ Fast Builds</h3>
+            <p>Speed up development with automated pipelines.</p>
+        </div>
+
+        <div class="card">
+            <h3>🔁 CI/CD</h3>
+            <p>Continuous integration & deployment made easy.</p>
+        </div>
+
+        <div class="card">
+            <h3>🔒 Secure</h3>
+            <p>Role-based security and plugin ecosystem.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>📧 gupta.mukul00507@gmail.com</p>
+    <a class="btn" href="mailto:gupta.mukul00507@gmail.com">Send Email</a>
+</section>
+
+<footer>
+    <p>© 2027 Jenkins Beautiful Webpage | Designed with ❤️</p>
+</footer>
+
+</body>
+</html>
