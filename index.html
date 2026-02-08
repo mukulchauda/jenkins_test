@@ -1,83 +1,243 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Beautiful Webpage</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-            color: #333;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        header {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 1em 0;
-        }
+<title>DevOps CI/CD Hub</title>
 
-        nav ul {
-            padding: 0;
-            list-style-type: none;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
 
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
+<style>
+:root{
+    --bg:#0f172a;
+    --card:#111827;
+    --text:#e5e7eb;
+    --accent:#22c55e;
+}
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
+body.light{
+    --bg:#f3f4f6;
+    --card:#ffffff;
+    --text:#111827;
+}
 
-        section {
-            margin: 2em 5%;
-            padding: 1em;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    transition:0.3s;
+}
 
-        footer {
-            text-align: center;
-            padding: 1em 0;
-            background-color: #333;
-            color: white;
-        }
-    </style>
+/* Animated background */
+body::before{
+    content:"";
+    position:fixed;
+    width:200%;
+    height:200%;
+    background:linear-gradient(45deg,#22c55e,#16a34a,#0ea5e9,#9333ea);
+    animation:move 20s linear infinite;
+    opacity:0.08;
+    z-index:-1;
+}
+
+@keyframes move{
+    0%{transform:translate(0,0)}
+    50%{transform:translate(-25%,-25%)}
+    100%{transform:translate(0,0)}
+}
+
+/* Header */
+header{
+    text-align:center;
+    padding:50px 20px;
+}
+
+h1{
+    font-size:40px;
+}
+
+.toggle{
+    background:var(--accent);
+    border:none;
+    padding:10px 18px;
+    border-radius:20px;
+    cursor:pointer;
+    color:white;
+}
+
+/* Sections */
+section{
+    max-width:1100px;
+    margin:30px auto;
+    padding:30px;
+    background:var(--card);
+    border-radius:12px;
+}
+
+/* Pipeline Layout */
+.pipeline{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.stage{
+    background:#1f2937;
+    padding:20px;
+    border-radius:10px;
+    min-width:180px;
+    text-align:center;
+    position:relative;
+}
+
+.stage::after{
+    content:"➡";
+    position:absolute;
+    right:-18px;
+    top:40%;
+    font-size:24px;
+}
+
+.stage:last-child::after{
+    content:"";
+}
+
+body.light .stage{
+    background:#e5e7eb;
+}
+
+/* Tool cards */
+.tools{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    padding:20px;
+    border-radius:10px;
+    background:#1f2937;
+}
+
+body.light .card{
+    background:#e5e7eb;
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:25px;
+    opacity:0.8;
+}
+
+a:focus,button:focus{
+    outline:3px solid yellow;
+}
+
+</style>
 </head>
+
 <body>
-    <header>
-        <h1>Welcome to Jenkins</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section id="home">
-        <h2>Home</h2>
-        <p>This is the home section of the webpage.</p>
-    </section>
+<header>
+    <h1>🚀 DevOps CI/CD Hub</h1>
+    <p>Automation • Jenkins • Cloud • Containers</p>
 
-    <section id="about">
-        <h2>About</h2>
-        <p>Learn more about us in this section.</p>
-    </section>
+    <button class="toggle" onclick="toggleMode()">
+        Toggle Dark / Light
+    </button>
+</header>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Get in touch with us here.</p>
-    </section>
+<section>
+<h2>🔁 Jenkins Auto-Deployment Pipeline</h2>
 
-    <footer>
-        <p>&copy; 2026 Beautiful Webpage</p>
-    </footer>
+<div class="pipeline">
+
+<div class="stage">
+<h3>Code</h3>
+<p>Developer pushes to Git</p>
+</div>
+
+<div class="stage">
+<h3>Build</h3>
+<p>Jenkins builds app</p>
+</div>
+
+<div class="stage">
+<h3>Test</h3>
+<p>Automated testing</p>
+</div>
+
+<div class="stage">
+<h3>Docker</h3>
+<p>Create container</p>
+</div>
+
+<div class="stage">
+<h3>Deploy</h3>
+<p>Auto deploy to server</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2>🛠 DevOps Tools</h2>
+
+<div class="tools">
+
+<div class="card">
+<h3>Jenkins</h3>
+<p>CI/CD automation server for pipelines.</p>
+</div>
+
+<div class="card">
+<h3>Docker</h3>
+<p>Container platform for consistent apps.</p>
+</div>
+
+<div class="card">
+<h3>Kubernetes</h3>
+<p>Container orchestration at scale.</p>
+</div>
+
+<div class="card">
+<h3>Ansible</h3>
+<p>Infrastructure automation & IaC.</p>
+</div>
+
+<div class="card">
+<h3>GitHub</h3>
+<p>Version control & collaboration.</p>
+</div>
+
+<div class="card">
+<h3>AWS</h3>
+<p>Cloud hosting and deployment.</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2>📧 Contact</h2>
+<p>For DevOps projects and collaboration:</p>
+<p><b>Email:</b> devops.engineer@example.com</p>
+</section>
+
+<footer>
+© 2027 DevOps CI/CD Hub | Powered by Jenkins Automation
+</footer>
+
+<script>
+function toggleMode(){
+    document.body.classList.toggle("light");
+}
+</script>
+
 </body>
 </html>
+
